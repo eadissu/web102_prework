@@ -23,7 +23,9 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-[![Watch the video](https://github.com/eadissu/web102_prework/blob/8d63c1cfb63c48c76aa24f970a42e09d365e3ab1/Cover.png)](https://github.com/eadissu/web102_prework/blob/8d63c1cfb63c48c76aa24f970a42e09d365e3ab1/X0HLb2N.mp4)
+[![Watch the video](https://github.com/eadissu/web102_prework/blob/8d63c1cfb63c48c76aa24f970a42e09d365e3ab1/Cover.png)](https://i.imgur.com/X0HLb2N.mp4)
+
+(If image does not play, click the thumbnail to be redirected to the Walk Through hosted on Imgur)
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with imgur !
