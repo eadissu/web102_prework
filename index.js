@@ -8,7 +8,7 @@
 import GAMES_DATA from './games.js';
 
 // create a list of objects to store the data about the games using JSON.parse
-const GAMES_JSON = JSON.parse(GAMES_DATA)
+const GAMES_JSON = JSON.parse(GAMES_DATA);
 
 // remove all child elements from a parent element in the DOM
 function deleteChildElements(parent) {
@@ -144,17 +144,9 @@ const fundedBtn = document.getElementById("funded-btn");
 const allBtn = document.getElementById("all-btn");
 
 // add event listeners with the correct functions to each button
-document.getElementById("unfunded-btn").addEventListener('click', () => {
-    filterUnfundedOnly();
-});
-
-document.getElementById("funded-btn").addEventListener('click', () => {
-    filterFundedOnly();
-});
-
-document.getElementById("all-btn").addEventListener('click', () => {
-    showAllGames();
-})
+unfundedBtn.addEventListener('click', filterUnfundedOnly);
+fundedBtn.addEventListener('click', filterFundedOnly);
+allBtn.addEventListener('click', showAllGames);
 
 /*************************************************************************************
  * Challenge 6: Add more information at the top of the page about the company.
@@ -165,12 +157,31 @@ document.getElementById("all-btn").addEventListener('click', () => {
 const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
+let unfunded_games = GAMES_JSON.filter((game) => {
+    return game.pledged < game.goal;
+});
+
+let funded_games = GAMES_JSON.filter((game) => {
+    return game.pledged >= game.goal;
+});
+
+let sum_funded = funded_games.reduce((total, game) => {
+    return total + game.pledged;
+}, 0);
 
 
 // create a string that explains the number of unfunded games using the ternary operator
+const displayStr = 
+    `A total of $${sum_funded.toLocaleString('en-US')} has been raised for ${funded_games.length} game${funded_games.length > 1 ? "s" : ""}. 
+    Currently, ${unfunded_games.length} game${unfunded_games.length > 1 ? "s" : ""} remains unfunded. 
+    We need your help to fund these amazing games!`;
 
 
 // create a new DOM element containing the template string and append it to the description container
+let display_str = document.createElement("p");
+display_str.innerHTML = displayStr;
+
+descriptionContainer.appendChild(display_str);
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
