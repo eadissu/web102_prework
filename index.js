@@ -177,7 +177,7 @@ let sum_funded = funded_games.reduce((total, game) => {
 // create a string that explains the number of unfunded games using the ternary operator
 const displayStr = 
     `A total of $${sum_funded.toLocaleString('en-US')} has been raised for ${funded_games.length} game${funded_games.length > 1 ? "s" : ""}. 
-    Currently, ${unfunded_games.length} game${unfunded_games.length > 1 ? "s" : ""} remains unfunded. 
+    Currently, ${unfunded_games.length} game${unfunded_games.length > 1 ? "s" : ""} remain unfunded. 
     We need your help to fund these amazing games!`;
 
 
