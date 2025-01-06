@@ -23,9 +23,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<video src="https://i.imgur.com/X0HLb2N.mp4" controls width="600" alt="Video Walkthrough">
-Your browser does not support the video tag. Check out the video at https://imgur.com/a/blm0K6Z
-</video>
+[![Watch the video](https://github.com/eadissu/web102_prework/blob/8d63c1cfb63c48c76aa24f970a42e09d365e3ab1/Cover.png)](https://github.com/eadissu/web102_prework/blob/8d63c1cfb63c48c76aa24f970a42e09d365e3ab1/X0HLb2N.mp4)
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with imgur !
