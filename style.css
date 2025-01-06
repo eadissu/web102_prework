@@ -38,6 +38,10 @@ body {
     text-align: center;
 }
 
+.stats-card div {
+    margin: 0 auto 10px auto;
+}
+
 #num-contributions, #total-raised, #num-games {
     font-size: 50px;
 }

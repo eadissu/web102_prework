@@ -25,29 +25,33 @@ function deleteChildElements(parent) {
 // grab the element with the id games-container
 const gamesContainer = document.getElementById("games-container");
 
+function gameDisplay(game) {
+    // create a new div element, which will become the game card
+    let game_info = document.createElement("div");
+
+    // add the class game-card to the list
+    game_info.classList.add("game-card");
+
+    // set the inner HTML using a template literal to display some info 
+    // about each game
+    game_info.innerHTML = `
+        <img src="${game.img}" alt="Game cover of ${game.name}" class="game-img" />
+        <h3>${game.name}</h3>
+        <p>${game.description}</p>
+    `;
+
+    return game_info;
+}
+
 // create a function that adds all data from the games array to the page
 function addGamesToPage(games) {
     // Clear games-container
     // gamesContainer.innerHTML = "";
 
-    // loop over each item in the data
+    // loop over each item in
+    // the data
     for (let game of games) {
-        // create a new div element, which will become the game card
-        let game_info = document.createElement("div");
-
-        // add the class game-card to the list
-        game_info.classList.add("game-card");
-
-        // set the inner HTML using a template literal to display some info 
-        // about each game
-        game_info.innerHTML = `
-            <img src="${game.img}" alt="Game cover of ${game.name}" class="game-img" />
-            <h3>${game.name}</h3>
-            <p>${game.description}</p>
-        `;
-
-        // append the game to the games-container
-        gamesContainer.appendChild(game_info);
+        gamesContainer.appendChild(gameDisplay(game))
     }
     
 
@@ -196,7 +200,10 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
+let [first_game, second_game, ...others] = sortedGames;
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
+firstGameContainer.appendChild(gameDisplay(first_game));
 
 // do the same for the runner up item
+secondGameContainer.appendChild(gameDisplay(second_game));
